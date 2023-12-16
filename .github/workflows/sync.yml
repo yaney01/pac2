@@ -1,0 +1,31 @@
+name: Sync Fork
+
+on:
+  push:
+    branches:
+      - master # 或者是你要同步的分支
+  schedule:
+    - cron: '0 */3 * * *'
+  
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # 这里添加了 fetch-depth 参数
+        ref: 'master' # 需要同步的分支，可能是master或main
+
+    - name: Config Git
+      run: |
+        git config user.name 'GitHub Actions'
+        git config user.email 'actions@github.com'
+ 
+    - name: Sync  # 注意这一行开始位置应该和上面的 '- name:' 对齐
+      run: |
+        git remote add upstream https://github.com/Alvin9999/pac2.git  # 填写原始仓库地址
+        git fetch upstream
+        git config pull.rebase false  # merge
+        git pull upstream master --allow-unrelated-histories  # 修改为：git pull upstream master
+        git push
