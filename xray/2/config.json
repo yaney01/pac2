@@ -47,40 +47,25 @@
   "outbounds": [
     {
       "tag": "proxy",
-      "protocol": "vless",
+      "protocol": "vmess",
       "settings": {
         "vnext": [
           {
-            "address": "23.227.38.111",
-            "port": 443,
+            "address": "108.181.22.213",
+            "port": 11223,
             "users": [
               {
-                "id": "0773256c-d020-436d-afea-6eee7cb6c872",
+                "id": "28fcdcde-905c-482c-ab31-36a0f5abe931",
                 "alterId": 0,
                 "email": "t@t.tt",
-                "security": "auto",
-                "encryption": "none",
-                "flow": ""
+                "security": "auto"
               }
             ]
           }
         ]
       },
       "streamSettings": {
-        "network": "ws",
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": false,
-          "serverName": "xray1.freegradely.xyz",
-          "fingerprint": "chrome",
-          "show": false
-        },
-        "wsSettings": {
-          "path": "/bodhws",
-          "headers": {
-            "Host": "xray1.freegradely.xyz"
-          }
-        }
+        "network": "tcp"
       },
       "mux": {
         "enabled": false,
