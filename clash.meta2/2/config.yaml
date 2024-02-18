@@ -13,8 +13,19 @@ dns:
     - tls://1.0.0.1:853
     - tls://dns.google:853
 proxies:
-  - {"name":"dongtaiwang.com_1","type":"vless","server":"108.181.5.130","port":19910,"udp":true,"uuid":"9cc39477-0d85-4419-84d4-fb7fc77668b3","tls":true,"servername":"m.media-amazon.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"yKXmLTmXAi-BHBg3JpCz-NWUmVcKlfm7iMmVoq7YQx0","short-id":"6ba85179e30d4fc2"},"client-fingerprint":"chrome"}
-
+- name: dongtaiwang.com_1                           
+  server: 108.181.5.131              
+  port: 21167                                    
+  type: tuic
+  uuid: e6b124d8-7a82-463d-b360-a3a3a19f7dc2
+  password: e6b124d8-7a82-463d-b360-a3a3a19f7dc2
+  alpn: [h3]
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
+  sni: www.bing.com                                
+  skip-cert-verify: true 
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -81,3 +92,4 @@ proxy-groups:
 rules:
   - MATCH,🚀 节点选择
   
+
