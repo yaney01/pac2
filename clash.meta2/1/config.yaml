@@ -13,17 +13,7 @@ dns:
     - tls://1.0.0.1:853
     - tls://dns.google:853
 proxies:
-  - name: dongtaiwang.com_1
-    type: hysteria2
-    server: 64.31.55.42
-    port: 31100
-    password: dongtaiwang.com
-    alpn:
-      - h3
-    sni: bing.com
-    skip-cert-verify: true
-    up: "11 Mbps"
-    down: "55 Mbps"
+  - {"name":"dongtaiwang.com_1","type":"trojan","server":"23.227.38.11","port":443,"udp":true,"password":"b17fa17d-13a0-4e8a-a398-8e549ea8b208","sni":"syndication-statutes-wanted-logo.trycloudflare.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/argox-tr","headers":{"host":"syndication-statutes-wanted-logo.trycloudflare.com"}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -86,7 +76,7 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - dongtaiwang.com_1
+   
 
 rules:
   - MATCH,🚀 节点选择
-  
